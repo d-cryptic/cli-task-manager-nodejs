@@ -1,29 +1,19 @@
 const fs = require("fs");
+const help = require("./commands/help.js");
+const add = require("./commands/add.js");
 
 argv = process.argv.slice(2);
 
 // Help command
-const help = require("./commands/help.js");
-help();
 
-// if (argv[0] === "add") {
-//   if (argv[1] === undefined || argv[2] === undefined) {
-//     console.log("Error: Missing tasks string. Nothing added!");
-//   } else {
-//     console.log(`Added task: "${argv[2]}" with priority ${argv[1]}`);
-//   }
+if (process.argv.slice(2) == false || argv[0] === "help") {
+  help();
+}
 
-//   // write to a new file named 2pac.txt
-//   fs.writeFile("./task.txt", `${argv[1]} ${argv[2]}`, (err) => {
-//     // throws an error, you could also catch it here
-//     if (err) throw err;
-
-//     // success case, the file was saved
-//     console.log("saved!");
-//   });
-// }
-
-// // console.log(process.argv.slice(2));
+if (argv[0] === "add") {
+  add();
+}
+// // console.log(process.argv.slice(2))
 
 // let listFile = {};
 
