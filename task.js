@@ -1,19 +1,21 @@
 const fs = require("fs");
 const help = require("./commands/help.js");
 const add = require("./commands/add.js");
+const list = require("./commands/list.js");
 
 argv = process.argv.slice(2);
 
-// Help command
-
-if (process.argv.slice(2) == false || argv[0] === "help") {
+if (argv(2) == false || argv[0] === "help") {
   help();
 }
 
 if (argv[0] === "add") {
   add();
 }
-// // console.log(process.argv.slice(2))
+
+if (argv[0] === "ls") {
+  list();
+}
 
 // let listFile = {};
 
