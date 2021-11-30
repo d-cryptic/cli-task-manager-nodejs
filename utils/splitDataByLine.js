@@ -1,4 +1,6 @@
-const splitDataByLine = (data) => {
+// Splits data by line
+
+const splitDataByLine = ( data ) => {
   let newData = data.split("\n");
   return newData;
 };

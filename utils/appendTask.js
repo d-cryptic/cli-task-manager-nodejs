@@ -1,5 +1,8 @@
-const fs = require("fs");
+// Appending data to file
 
+const fs = require( "fs" );
+
+// For appending pending task to task.txt
 const appendTask = (priority, task, filename) => {
   const message = `${priority} ${task}`;
 
@@ -10,8 +13,8 @@ const appendTask = (priority, task, filename) => {
   }
 };
 
+// For appending completed task to completed.txt
 const appendDoneTask = (data, filename) => {
-  // write to a new file named data.txt
 
   if (data === undefined) {
     console.log("Error: no incomplete item with index #0 exists.");

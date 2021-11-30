@@ -1,3 +1,4 @@
+// importing all command functions
 const help = require("./commands/help.js");
 const addTask = require("./commands/add.js");
 const { listData } = require("./commands/listTask.js");
@@ -7,26 +8,35 @@ const reportTask = require("./commands/reportTask.js");
 
 argv = process.argv.slice(2);
 
-if (!argv[0] || argv[0] === "help") {
+
+// special case - when running only the file - shows help menu
+if (!argv[0]) {
   help();
 }
 
-if (argv[0] === "add") {
-  addTask(parseInt(argv[1]), argv[2]);
-}
+// calling the function with command line arguments as parameter
+switch (argv[0]) {
+  case "help":
+    help();
+    break;
 
-if (argv[0] === "ls") {
-  listData("./task.txt");
-}
+  case "add":
+    addTask(parseInt(argv[1]), argv[2]);
+    break;
 
-if (argv[0] === "done") {
-  doneTask(argv[1]);
-}
+  case "ls":
+    listData("./task.txt");
+    break;
 
-if (argv[0] === "del") {
-  deleteTask(argv[1]);
-}
+  case "done":
+    doneTask(argv[1]);
+    break;
 
-if (argv[0] === "report") {
-  reportTask();
+  case "del":
+    deleteTask(argv[1]);
+    break;
+
+  case "report":
+    reportTask();
+    break;
 }
