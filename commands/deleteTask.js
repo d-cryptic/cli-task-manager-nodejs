@@ -3,10 +3,11 @@ const splitData = require("../utils/splitData.js");
 const writeData = require("./writeData.js");
 
 const deleteTask = (number) => {
-  let tasks = readTask("./commands/task.txt");
+  let tasks = readTask("./task.txt");
   let newData = splitData(tasks);
-  delete newData[number - 1];
-  writeData(newData);
+  // delete newData[ number - 1 ];
+  newData.splice(number - 1, 1);
+  writeData(newData, "./task.txt");
   console.log(`Deleted task #${number}`);
 };
 
