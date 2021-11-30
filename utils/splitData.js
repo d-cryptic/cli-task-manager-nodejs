@@ -17,4 +17,9 @@ const splitData = (data) => {
   return newData;
 };
 
-module.exports = splitData;
+const splitCompletedTask = (data) => {
+  let newData = splitDataByLine(data);
+  return newData;
+};
+
+module.exports = { splitData, splitCompletedTask };

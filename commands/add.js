@@ -1,5 +1,5 @@
-const { appendTask } = require("./appendTask");
-const sortTask = require("./sortTask");
+const { appendTask } = require("../utils/appendTask");
+const sortTask = require("../utils/sortTask");
 
 const add = (priority, task) => {
   if (!priority || !task) {

@@ -1,9 +1,9 @@
 const help = require("./commands/help.js");
 const addTask = require("./commands/add.js");
-const listTask = require("./commands/listTask.js");
+const { listData } = require("./commands/listTask.js");
 const doneTask = require("./commands/doneTask.js");
 const deleteTask = require("./commands/deleteTask.js");
-// const reportTask = require("./commands/reportTask.js");
+const reportTask = require("./commands/reportTask.js");
 
 argv = process.argv.slice(2);
 
@@ -16,7 +16,7 @@ if (argv[0] === "add") {
 }
 
 if (argv[0] === "ls") {
-  listTask();
+  listData("./task.txt");
 }
 
 if (argv[0] === "done") {
@@ -27,6 +27,6 @@ if (argv[0] === "del") {
   deleteTask(argv[1]);
 }
 
-// if (argv[0] === "report") {
-//   report();
-// }
+if (argv[0] === "report") {
+  reportTask();
+}

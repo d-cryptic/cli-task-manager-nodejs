@@ -1,7 +1,7 @@
 const readTask = require("./readTask");
 const writeData = require("./writeData");
-const splitData = require("../utils/splitData");
-const sortData = require("../utils/sortData");
+const { splitData } = require("./splitData");
+const sortData = require("./sortData");
 
 const sortTaskByPriority = (filename) => {
   let tasks = readTask(filename);

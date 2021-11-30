@@ -10,9 +10,15 @@ const appendTask = (priority, task, filename) => {
   }
 };
 
-const appendDoneTask = (task, filename) => {
+const appendDoneTask = (data, filename) => {
   // write to a new file named data.txt
-  const message = `${task}`;
+
+  if (data === undefined) {
+    console.log("Error: no incomplete item with index #0 exists.");
+    return;
+  }
+
+  const message = `${data.task}`;
   if (!fs.existsSync(filename)) {
     fs.appendFileSync(filename, message);
   } else {
