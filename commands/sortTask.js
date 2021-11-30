@@ -3,14 +3,12 @@ const writeData = require("./writeData");
 const splitData = require("../utils/splitData");
 const sortData = require("../utils/sortData");
 
-const sortTaskByPriority = () => {
-  let tasks = readTask("./commands/task.txt");
-  let data = splitDataByLine(tasks);
+const sortTaskByPriority = (filename) => {
+  let tasks = readTask(filename);
   let newData = [];
-  newData = splitData(data);
-  sortData(newData);
-
-  writeData(newData, "./commands/task.txt");
+  newData = splitData(tasks);
+  sortedData = sortData(newData);
+  writeData(sortedData, "./task.txt");
   return newData;
 };
 

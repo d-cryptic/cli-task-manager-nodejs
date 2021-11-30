@@ -1,5 +1,5 @@
 const help = require("./commands/help.js");
-// const add = require("./commands/add.js");
+const add = require("./commands/add.js");
 // const list = require("./commands/listData.js");
 // const done = require("./commands/doneTask.js");
 // const deleteTask = require("./commands/deleteTask.js");
@@ -11,9 +11,11 @@ if (!argv[0] || argv[0] === "help") {
   help();
 }
 
-// if (argv[0] === "add") {
-//   add(argv[1], argv[2]);
-// }
+if (argv[0] === "add") {
+  add(parseInt(argv[1]), argv[2]);
+}
+
+console.log(!undefined);
 
 // if (argv[0] === "ls") {
 //   list();
