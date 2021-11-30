@@ -10,4 +10,14 @@ const appendTask = (priority, task) => {
   });
 };
 
-module.exports = appendTask;
+const appendDoneTask = (task) => {
+  // write to a new file named data.txt
+  fs.appendFile("./commands/done.txt", `${task}`, (err) => {
+    // throws an error, you could also catch it here
+    if (err) throw err;
+
+    // success case, the file was saved
+  });
+};
+
+module.exports = { appendTask, appendDoneTask };

@@ -11,8 +11,8 @@ const splitData = (data) => {
       task: dataSplit[1],
     });
   }
-	
-	reeturn newData;
+
+  return newData;
 };
 
 module.exports = splitData;

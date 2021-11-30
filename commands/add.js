@@ -1,17 +1,15 @@
 const appendTask = require("./appendTask");
 const sortTask = require("./sortTask");
 
-argv = process.argv.slice(2);
-
-const add = () => {
+const add = (priority, task) => {
   if (argv[1] === undefined || argv[2] === undefined) {
     console.log("Error: Missing tasks string. Nothing added!");
   } else {
-    console.log(`Added task: "${argv[2]}" with priority ${argv[1]}`);
+    console.log(`Added task: "${task}" with priority ${priority}`);
   }
 
-  appendTask(argv[1], argv[2]);
-//   sortTask();
+  appendTask(priority, task);
+  //   sortTask();
 };
 
 module.exports = add;

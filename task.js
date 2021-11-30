@@ -2,6 +2,10 @@ const fs = require("fs");
 const help = require("./commands/help.js");
 const add = require("./commands/add.js");
 const list = require("./commands/list.js");
+const done = require("./commands/doneTask.js");
+const deleteTask = require("./commands/deleteTask.js");
+const reportTask = require("./commands/reportTask.js");
+const { report } = require("process");
 
 argv = process.argv.slice(2);
 
@@ -10,50 +14,21 @@ if (argv(2) == false || argv[0] === "help") {
 }
 
 if (argv[0] === "add") {
-  add();
+  add(argv[1], argv[2]);
 }
 
 if (argv[0] === "ls") {
   list();
 }
 
-// let listFile = {};
+if (argv[0] === "done") {
+  done(argv[1]);
+}
 
-// fs.readFile("task.txt", "utf-8", (err, data) => {
-//   if (err) {
-//     throw err;
-//   }
+if (argv[0] === "del") {
+  deleteTask(argv[1]);
+}
 
-//   data1 = data.split("\n");
-//   console.log(data1);
-// });
-
-// // Reading, appending and sorting file
-
-// const readFile = () => {
-//   fs.readFile("task.txt", "utf-8", (err, data) => {
-//     if (err) {
-//       throw err;
-//     }
-
-//     data1 = data.split("\n");
-// 	  let data2 = {};
-//     let length = data1.length;
-//     for (i = 0; i < length; i++) {
-//       data2 = data1[i].split(" ");
-// 		listFile[ i ] = { data2[ 0 ]: data2[ 1 ] };
-//     }
-//   });
-// };
-
-// const appendFile = (data) => {
-//   fs.appendFile("task.txt", data, function (err) {
-//     if (err) {
-//       throw err;
-//     } else {
-//       console.log("Saved!");
-//     }
-//   });
-// };
-
-// const sortData = (data) => {};
+if (argv[0] === "report") {
+  report();
+}
