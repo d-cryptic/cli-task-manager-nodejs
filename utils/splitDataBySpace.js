@@ -1,5 +1,5 @@
 const splitDataBySpace = (data) => {
-  let newData = data.split(" ");
+  let newData = data.split(/ (.*)/);
   return newData;
 };
 
